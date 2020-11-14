@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEX>
+ <Project Type="Project">
+  <Name>demo</Name>
+  <Created Type="VersionInfo">
+   <DateTime>2020-06-09T22:03:15</DateTime>
+   <Library>DEX Library 0.0 DNPT Java</Library>
+  </Created>
+  <Modified Type="VersionInfo">
+   <DateTime>2020-06-30T10:35:39</DateTime>
+   <Library>DEX Library 0.0 DNPT Java</Library>
+  </Modified>
+  <Models>
+   <Model Type="Model">
+    <Name>demo</Name>
+    <Root Type="Attribute">
+     <Name>Root</Name>
+     <Inputs>
+      <Attribute Type="Attribute">
+       <Name>demo</Name>
+      </Attribute>
+     </Inputs>
+    </Root>
+    <Data Type="Alternatives">
+     <Name>Alternatives</Name>
+     <Header Type="DataHeader"/>
+    </Data>
+   </Model>
+   <Model Type="Model" ID="Mod_CAR">
+    <Name>CAR</Name>
+    <Description>This is a DEXi multi-attribute model for the evaluation of cars, created long ago for educational purposes. The model is small and is not meant to address the problem of car evaluation at any realistic level. Only two groups of criteria are taken into account: PRICE (consisting of buying and maintenance price) and TECH.CHAR. (technical characteristics in terms of comfort and safety). COMFORT depends on the number of passengers, number of doors and size of the luggage boot. An earlier version of the model was first published in: Bohanec, M., Rajkovič, V.: Knowledge acquisition and explanation for multi-attribute decision making, Proceedings of the 8th International Workshop "Expert Systems and Their Applications AVIGNON 88", Vol. 1, 59-78, Avignon, 1988. Available from http://kt.ijs.si/MarkoBohanec/pub/Avignon88.pdf The CAR model, expanded into a flat data table, appears in the UCI Machine Learning Repository: http://archive.ics.uci.edu/ml/datasets/Car+Evaluation This particular version of the model is included in the installation package of DEXi, a program for qualitative multi-attribute decision modelling, http://kt.ijs.si/MarkoBohanec/dexi.html, and is documented in DEXi User's Manual, http://kt.ijs.si/MarkoBohanec/pub/DEXiManual304.pdf</Description>
+    <Root Type="Attribute" ID="Att_Root">
+     <Name>Root</Name>
+     <Inputs>
+      <Attribute Type="Attribute" ID="Att_CAR">
+       <Name>CAR</Name>
+       <Description>Quality of a car</Description>
+       <Scale Type="CategoricalScale">
+        <Order>Increasing</Order>
+        <Intervals>Value</Intervals>
+        <LowBound>0</LowBound>
+        <LowPoint>0</LowPoint>
+        <HighPoint>3</HighPoint>
+        <Categories>
+         <Category Type="Category">
+          <Name>unacc</Name>
+          <Description>unacceptable car</Description>
+         </Category>
+         <Category Type="Category">
+          <Name>acc</Name>
+          <Description>acceptable, but I won't like it</Description>
+         </Category>
+         <Category Type="Category">
+          <Name>good</Name>
+          <Description>satisfies my needs</Description>
+         </Category>
+         <Category Type="Category">
+          <Name>exc</Name>
+          <Description>excellent car</Description>
+         </Category>
+        </Categories>
+       </Scale>
+       <Function Type="TabularValueFunction" Space="3;4:4">
+        <Table Length="12">
+         <Value Type="IntSingle" Index="0" Args="0;0">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="1" Args="0;1">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="2" Args="0;2">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="3" Args="0;3">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="4" Args="1;0">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="5" Args="1;1">
+          <Value>1</Value>
+         </Value>
+         <Value Type="IntSingle" Index="6" Args="1;2">
+          <Value>2</Value>
+         </Value>
+         <Value Type="IntSingle" Index="7" Args="1;3">
+          <Value>3</Value>
+         </Value>
+         <Value Type="IntSingle" Index="8" Args="2;0">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="9" Args="2;1">
+          <Value>2</Value>
+         </Value>
+         <Value Type="IntSingle" Index="10" Args="2;2">
+          <Value>3</Value>
+         </Value>
+         <Value Type="IntSingle" Index="11" Args="2;3">
+          <Value>3</Value>
+         </Value>
+        </Table>
+       </Function>
+       <Inputs>
+        <Attribute Type="Attribute" ID="Att_PRICE">
+         <Name>PRICE</Name>
+         <Description>Price of a car</Description>
+         <Scale Type="CategoricalScale">
+          <Order>Increasing</Order>
+          <Intervals>Value</Intervals>
+          <LowBound>0</LowBound>
+          <LowPoint>0</LowPoint>
+          <HighPoint>2</HighPoint>
+          <Categories>
+           <Category Type="Category">
+            <Name>high</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>medium</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>low</Name>
+           </Category>
+          </Categories>
+         </Scale>
+         <Function Type="TabularValueFunction" Space="3;3:3">
+          <Table Length="9">
+           <Value Type="IntSingle" Index="0" Args="0;0">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="1" Args="0;1">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="2" Args="0;2">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="3" Args="1;0">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="4" Args="1;1">
+            <Value>1</Value>
+           </Value>
+           <Value Type="IntSingle" Index="5" Args="1;2">
+            <Value>2</Value>
+           </Value>
+           <Value Type="IntSingle" Index="6" Args="2;0">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="7" Args="2;1">
+            <Value>2</Value>
+           </Value>
+           <Value Type="IntSingle" Index="8" Args="2;2">
+            <Value>2</Value>
+           </Value>
+          </Table>
+         </Function>
+         <Inputs>
+          <Attribute Type="Attribute" ID="Att_BUY_PRICE">
+           <Name>BUY.PRICE</Name>
+           <Description>Buying price</Description>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>2</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>high</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>medium</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>low</Name>
+             </Category>
+            </Categories>
+           </Scale>
+          </Attribute>
+          <Attribute Type="Attribute" ID="Att_MAINT_PRICE">
+           <Name>MAINT.PRICE</Name>
+           <Description>Maintenance price</Description>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>2</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>high</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>medium</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>low</Name>
+             </Category>
+            </Categories>
+           </Scale>
+          </Attribute>
+         </Inputs>
+        </Attribute>
+        <Attribute Type="Attribute" ID="Att_TECH_CHAR_">
+         <Name>TECH.CHAR.</Name>
+         <Description>Technical characteristics</Description>
+         <Scale Type="CategoricalScale">
+          <Order>Increasing</Order>
+          <Intervals>Value</Intervals>
+          <LowBound>0</LowBound>
+          <LowPoint>0</LowPoint>
+          <HighPoint>3</HighPoint>
+          <Categories>
+           <Category Type="Category">
+            <Name>bad</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>acc</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>good</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>exc</Name>
+           </Category>
+          </Categories>
+         </Scale>
+         <Function Type="TabularValueFunction" Space="3;3:4">
+          <Table Length="9">
+           <Value Type="IntSingle" Index="0" Args="0;0">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="1" Args="0;1">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="2" Args="0;2">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="3" Args="1;0">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="4" Args="1;1">
+            <Value>1</Value>
+           </Value>
+           <Value Type="IntSingle" Index="5" Args="1;2">
+            <Value>2</Value>
+           </Value>
+           <Value Type="IntSingle" Index="6" Args="2;0">
+            <Value>0</Value>
+           </Value>
+           <Value Type="IntSingle" Index="7" Args="2;1">
+            <Value>2</Value>
+           </Value>
+           <Value Type="IntSingle" Index="8" Args="2;2">
+            <Value>3</Value>
+           </Value>
+          </Table>
+         </Function>
+         <Inputs>
+          <Attribute Type="Attribute" ID="Att_COMFORT">
+           <Name>COMFORT</Name>
+           <Description>Comfort</Description>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>2</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>small</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>medium</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>high</Name>
+             </Category>
+            </Categories>
+           </Scale>
+           <Function Type="TabularValueFunction" Space="3;4;3:3">
+            <Table Length="36">
+             <Value Type="IntSingle" Index="0" Args="0;0;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="1" Args="0;0;1">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="2" Args="0;0;2">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="3" Args="0;1;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="4" Args="0;1;1">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="5" Args="0;1;2">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="6" Args="0;2;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="7" Args="0;2;1">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="8" Args="0;2;2">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="9" Args="0;3;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="10" Args="0;3;1">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="11" Args="0;3;2">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="12" Args="1;0;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="13" Args="1;0;1">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="14" Args="1;0;2">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="15" Args="1;1;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="16" Args="1;1;1">
+              <Value>1</Value>
+             </Value>
+             <Value Type="IntSingle" Index="17" Args="1;1;2">
+              <Value>1</Value>
+             </Value>
+             <Value Type="IntSingle" Index="18" Args="1;2;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="19" Args="1;2;1">
+              <Value>1</Value>
+             </Value>
+             <Value Type="IntSingle" Index="20" Args="1;2;2">
+              <Value>2</Value>
+             </Value>
+             <Value Type="IntSingle" Index="21" Args="1;3;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="22" Args="1;3;1">
+              <Value>1</Value>
+             </Value>
+             <Value Type="IntSingle" Index="23" Args="1;3;2">
+              <Value>2</Value>
+             </Value>
+             <Value Type="IntSingle" Index="24" Args="2;0;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="25" Args="2;0;1">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="26" Args="2;0;2">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="27" Args="2;1;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="28" Args="2;1;1">
+              <Value>1</Value>
+             </Value>
+             <Value Type="IntSingle" Index="29" Args="2;1;2">
+              <Value>2</Value>
+             </Value>
+             <Value Type="IntSingle" Index="30" Args="2;2;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="31" Args="2;2;1">
+              <Value>2</Value>
+             </Value>
+             <Value Type="IntSingle" Index="32" Args="2;2;2">
+              <Value>2</Value>
+             </Value>
+             <Value Type="IntSingle" Index="33" Args="2;3;0">
+              <Value>0</Value>
+             </Value>
+             <Value Type="IntSingle" Index="34" Args="2;3;1">
+              <Value>2</Value>
+             </Value>
+             <Value Type="IntSingle" Index="35" Args="2;3;2">
+              <Value>2</Value>
+             </Value>
+            </Table>
+           </Function>
+           <Inputs>
+            <Attribute Type="Attribute" ID="Att__PERS">
+             <Name>#PERS</Name>
+             <Description>Maximum number of passengers</Description>
+             <Scale Type="CategoricalScale">
+              <Order>Increasing</Order>
+              <Intervals>Value</Intervals>
+              <LowBound>0</LowBound>
+              <LowPoint>0</LowPoint>
+              <HighPoint>2</HighPoint>
+              <Categories>
+               <Category Type="Category">
+                <Name>to_2</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>3-4</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>more</Name>
+               </Category>
+              </Categories>
+             </Scale>
+            </Attribute>
+            <Attribute Type="Attribute" ID="Att__DOORS">
+             <Name>#DOORS</Name>
+             <Description>Number of doors</Description>
+             <Scale Type="CategoricalScale">
+              <Order>Increasing</Order>
+              <Intervals>Value</Intervals>
+              <LowBound>0</LowBound>
+              <LowPoint>0</LowPoint>
+              <HighPoint>3</HighPoint>
+              <Categories>
+               <Category Type="Category">
+                <Name>2</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>3</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>4</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>more</Name>
+               </Category>
+              </Categories>
+             </Scale>
+            </Attribute>
+            <Attribute Type="Attribute" ID="Att_LUGGAGE">
+             <Name>LUGGAGE</Name>
+             <Description>Size of the luggage boot</Description>
+             <Scale Type="CategoricalScale">
+              <Order>Increasing</Order>
+              <Intervals>Value</Intervals>
+              <LowBound>0</LowBound>
+              <LowPoint>0</LowPoint>
+              <HighPoint>2</HighPoint>
+              <Categories>
+               <Category Type="Category">
+                <Name>small</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>medium</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>big</Name>
+               </Category>
+              </Categories>
+             </Scale>
+            </Attribute>
+           </Inputs>
+          </Attribute>
+          <Attribute Type="Attribute" ID="Att_SAFETY">
+           <Name>SAFETY</Name>
+           <Description>Car's safety</Description>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>2</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>small</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>medium</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>high</Name>
+             </Category>
+            </Categories>
+           </Scale>
+          </Attribute>
+         </Inputs>
+        </Attribute>
+       </Inputs>
+      </Attribute>
+     </Inputs>
+    </Root>
+    <Data Type="Alternatives">
+     <Name>Alternatives</Name>
+     <Header Type="DataHeader">
+      <Header>
+       <Attribute Type="Attribute" Ref="Att_CAR"/>
+       <Attribute Type="Attribute" Ref="Att_PRICE"/>
+       <Attribute Type="Attribute" Ref="Att_BUY_PRICE"/>
+       <Attribute Type="Attribute" Ref="Att_MAINT_PRICE"/>
+       <Attribute Type="Attribute" Ref="Att_TECH_CHAR_"/>
+       <Attribute Type="Attribute" Ref="Att_COMFORT"/>
+       <Attribute Type="Attribute" Ref="Att__PERS"/>
+       <Attribute Type="Attribute" Ref="Att__DOORS"/>
+       <Attribute Type="Attribute" Ref="Att_LUGGAGE"/>
+       <Attribute Type="Attribute" Ref="Att_SAFETY"/>
+      </Header>
+     </Header>
+     <Alternatives>
+      <Alternative Type="Alternative">
+       <Name>Car1</Name>
+       <Values>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>3</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>3</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+       </Values>
+      </Alternative>
+      <Alternative Type="Alternative">
+       <Name>Car2</Name>
+       <Values>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+       </Values>
+      </Alternative>
+     </Alternatives>
+    </Data>
+   </Model>
+   <Model Type="Model" ID="Mod_CarCrazyFunctions_dxi">
+    <Name>CarCrazyFunctions.dxi</Name>
+    <Root Type="Attribute" ID="Att_Root_1">
+     <Name>Root</Name>
+     <Inputs>
+      <Attribute Type="Attribute" ID="Att_CAR_1">
+       <Name>CAR</Name>
+       <Description>Quality of a car</Description>
+       <Scale Type="CategoricalScale">
+        <Order>Increasing</Order>
+        <Intervals>Value</Intervals>
+        <LowBound>0</LowBound>
+        <LowPoint>0</LowPoint>
+        <HighPoint>3</HighPoint>
+        <Categories>
+         <Category Type="Category">
+          <Name>unacc</Name>
+          <Description>unacceptable car</Description>
+         </Category>
+         <Category Type="Category">
+          <Name>acc</Name>
+          <Description>acceptable, but I won't like it</Description>
+         </Category>
+         <Category Type="Category">
+          <Name>good</Name>
+          <Description>satisfies my needs</Description>
+         </Category>
+         <Category Type="Category">
+          <Name>exc</Name>
+          <Description>excellent car</Description>
+         </Category>
+        </Categories>
+       </Scale>
+       <Function Type="TabularValueFunction" Space="3;4:4">
+        <Table Length="12">
+         <Value Type="IntSingle" Index="0" Args="0;0">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="1" Args="0;1">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="2" Args="0;2">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="3" Args="0;3">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="4" Args="1;0">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="5" Args="1;1">
+          <Value>1</Value>
+         </Value>
+         <Value Type="IntSingle" Index="6" Args="1;2">
+          <Value>2</Value>
+         </Value>
+         <Value Type="IntSingle" Index="7" Args="1;3">
+          <Value>3</Value>
+         </Value>
+         <Value Type="IntSingle" Index="8" Args="2;0">
+          <Value>0</Value>
+         </Value>
+         <Value Type="IntSingle" Index="9" Args="2;1">
+          <Value>2</Value>
+         </Value>
+         <Value Type="IntSingle" Index="10" Args="2;2">
+          <Value>3</Value>
+         </Value>
+         <Value Type="IntSingle" Index="11" Args="2;3">
+          <Value>3</Value>
+         </Value>
+        </Table>
+       </Function>
+       <Inputs>
+        <Attribute Type="Attribute" ID="Att_PRICE_1">
+         <Name>PRICE</Name>
+         <Description>Price of a car</Description>
+         <Scale Type="CategoricalScale">
+          <Order>Increasing</Order>
+          <Intervals>Value</Intervals>
+          <LowBound>0</LowBound>
+          <LowPoint>0</LowPoint>
+          <HighPoint>2</HighPoint>
+          <Categories>
+           <Category Type="Category">
+            <Name>high</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>medium</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>low</Name>
+           </Category>
+          </Categories>
+         </Scale>
+         <Function Type="TabularValueFunction" Space="3;3;4:3">
+          <Table Length="36">
+           <Value Type="IntInterval" Index="0" Args="0;0;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="1" Args="0;0;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="2" Args="0;0;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="3" Args="0;0;3">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="4" Args="0;1;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="5" Args="0;1;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="6" Args="0;1;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="7" Args="0;1;3">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="8" Args="0;2;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="9" Args="0;2;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="10" Args="0;2;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="11" Args="0;2;3">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="12" Args="1;0;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="13" Args="1;0;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="14" Args="1;0;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="15" Args="1;0;3">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="16" Args="1;1;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="17" Args="1;1;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="18" Args="1;1;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="19" Args="1;1;3">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="20" Args="1;2;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="21" Args="1;2;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="22" Args="1;2;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="23" Args="1;2;3">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="24" Args="2;0;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="25" Args="2;0;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="26" Args="2;0;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="27" Args="2;0;3">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="28" Args="2;1;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="29" Args="2;1;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="30" Args="2;1;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="31" Args="2;1;3">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="32" Args="2;2;0">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="33" Args="2;2;1">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="34" Args="2;2;2">
+            <Value>0:2</Value>
+           </Value>
+           <Value Type="IntInterval" Index="35" Args="2;2;3">
+            <Value>0:2</Value>
+           </Value>
+          </Table>
+         </Function>
+         <Inputs>
+          <Attribute Type="Attribute" ID="Att_BUY_PRICE_1">
+           <Name>BUY.PRICE</Name>
+           <Description>Buying price</Description>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>2</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>high</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>medium</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>low</Name>
+             </Category>
+            </Categories>
+           </Scale>
+          </Attribute>
+          <Attribute Type="Attribute" ID="Att_MAINT_PRICE_1">
+           <Name>MAINT.PRICE</Name>
+           <Description>Maintenance price</Description>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>2</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>high</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>medium</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>low</Name>
+             </Category>
+            </Categories>
+           </Scale>
+          </Attribute>
+          <Attribute Type="Attribute" ID="Att_New">
+           <Name>New</Name>
+           <Outputs>
+            <Attribute Type="Attribute" Ref="Att_PRICE_1"/>
+            <Attribute Type="Attribute" Ref="Att_TECH_CHAR__1"/>
+           </Outputs>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>3</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>unacc</Name>
+              <Description>unacceptable car</Description>
+             </Category>
+             <Category Type="Category">
+              <Name>acc</Name>
+              <Description>acceptable, but I won't like it</Description>
+             </Category>
+             <Category Type="Category">
+              <Name>good</Name>
+              <Description>satisfies my needs</Description>
+             </Category>
+             <Category Type="Category">
+              <Name>exc</Name>
+              <Description>excellent car</Description>
+             </Category>
+            </Categories>
+           </Scale>
+          </Attribute>
+         </Inputs>
+        </Attribute>
+        <Attribute Type="Attribute" ID="Att_TECH_CHAR__1">
+         <Name>TECH.CHAR.</Name>
+         <Description>Technical characteristics</Description>
+         <Scale Type="CategoricalScale">
+          <Order>Increasing</Order>
+          <Intervals>Value</Intervals>
+          <LowBound>0</LowBound>
+          <LowPoint>0</LowPoint>
+          <HighPoint>3</HighPoint>
+          <Categories>
+           <Category Type="Category">
+            <Name>bad</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>acc</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>good</Name>
+           </Category>
+           <Category Type="Category">
+            <Name>exc</Name>
+           </Category>
+          </Categories>
+         </Scale>
+         <Inputs>
+          <Attribute Type="Attribute" ID="Att_COMFORT_1">
+           <Name>COMFORT</Name>
+           <Description>Comfort</Description>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>2</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>small</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>medium</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>high</Name>
+             </Category>
+            </Categories>
+           </Scale>
+           <Inputs>
+            <Attribute Type="Attribute" ID="Att__PERS_1">
+             <Name>#PERS</Name>
+             <Description>Maximum number of passengers</Description>
+             <Scale Type="CategoricalScale">
+              <Order>Increasing</Order>
+              <Intervals>Value</Intervals>
+              <LowBound>0</LowBound>
+              <LowPoint>0</LowPoint>
+              <HighPoint>2</HighPoint>
+              <Categories>
+               <Category Type="Category">
+                <Name>to_2</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>3-4</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>more</Name>
+               </Category>
+              </Categories>
+             </Scale>
+            </Attribute>
+            <Attribute Type="Attribute" ID="Att__DOORS_1">
+             <Name>#DOORS</Name>
+             <Description>Number of doors</Description>
+             <Scale Type="CategoricalScale">
+              <Order>Increasing</Order>
+              <Intervals>Value</Intervals>
+              <LowBound>0</LowBound>
+              <LowPoint>0</LowPoint>
+              <HighPoint>3</HighPoint>
+              <Categories>
+               <Category Type="Category">
+                <Name>2</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>3</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>4</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>more</Name>
+               </Category>
+              </Categories>
+             </Scale>
+            </Attribute>
+            <Attribute Type="Attribute" ID="Att_LUGGAGE_1">
+             <Name>LUGGAGE</Name>
+             <Description>Size of the luggage boot</Description>
+             <Scale Type="CategoricalScale">
+              <Order>Increasing</Order>
+              <Intervals>Value</Intervals>
+              <LowBound>0</LowBound>
+              <LowPoint>0</LowPoint>
+              <HighPoint>2</HighPoint>
+              <Categories>
+               <Category Type="Category">
+                <Name>small</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>medium</Name>
+               </Category>
+               <Category Type="Category">
+                <Name>big</Name>
+               </Category>
+              </Categories>
+             </Scale>
+            </Attribute>
+            <Attribute Type="Attribute" ID="Att_New_1">
+             <Name>New</Name>
+            </Attribute>
+           </Inputs>
+          </Attribute>
+          <Attribute Type="Attribute" ID="Att_SAFETY_1">
+           <Name>SAFETY</Name>
+           <Description>Car's safety</Description>
+           <Scale Type="CategoricalScale">
+            <Order>Increasing</Order>
+            <Intervals>Value</Intervals>
+            <LowBound>0</LowBound>
+            <LowPoint>0</LowPoint>
+            <HighPoint>2</HighPoint>
+            <Categories>
+             <Category Type="Category">
+              <Name>small</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>medium</Name>
+             </Category>
+             <Category Type="Category">
+              <Name>high</Name>
+             </Category>
+            </Categories>
+           </Scale>
+          </Attribute>
+          <Attribute Type="Attribute" Ref="Att_New"/>
+         </Inputs>
+        </Attribute>
+       </Inputs>
+      </Attribute>
+     </Inputs>
+    </Root>
+    <Data Type="Alternatives">
+     <Name>Alternatives</Name>
+     <Header Type="DataHeader">
+      <Header>
+       <Attribute Type="Attribute" Ref="Att_CAR_1"/>
+       <Attribute Type="Attribute" Ref="Att_PRICE_1"/>
+       <Attribute Type="Attribute" Ref="Att_BUY_PRICE_1"/>
+       <Attribute Type="Attribute" Ref="Att_MAINT_PRICE_1"/>
+       <Attribute Type="Attribute" Ref="Att_New"/>
+       <Attribute Type="Attribute" Ref="Att_TECH_CHAR__1"/>
+       <Attribute Type="Attribute" Ref="Att_COMFORT_1"/>
+       <Attribute Type="Attribute" Ref="Att__PERS_1"/>
+       <Attribute Type="Attribute" Ref="Att__DOORS_1"/>
+       <Attribute Type="Attribute" Ref="Att_LUGGAGE_1"/>
+       <Attribute Type="Attribute" Ref="Att_New_1"/>
+       <Attribute Type="Attribute" Ref="Att_SAFETY_1"/>
+      </Header>
+     </Header>
+     <Alternatives>
+      <Alternative Type="Alternative">
+       <Name>Car1</Name>
+       <Values>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:3</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:3</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:3</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell"/>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+       </Values>
+      </Alternative>
+      <Alternative Type="Alternative">
+       <Name>Car2</Name>
+       <Values>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:3</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:3</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:3</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntInterval">
+          <Value>0:2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>2</Value>
+         </Value>
+        </Cell>
+        <Cell Type="DataCell"/>
+        <Cell Type="DataCell">
+         <Value Type="IntSingle">
+          <Value>1</Value>
+         </Value>
+        </Cell>
+       </Values>
+      </Alternative>
+     </Alternatives>
+    </Data>
+   </Model>
+  </Models>
+  <Views>
+   <View Type="ModelTreeView">
+    <Model Type="Model" Ref="Mod_CAR"/>
+    <Root Type="ModelTreeNode">
+     <Status>AggUndef</Status>
+     <Attribute Type="Attribute" Ref="Att_Root"/>
+     <Inputs>
+      <Node Type="ModelTreeNode" ID="Node_CAR">
+       <Status>AggDefDet</Status>
+       <Attribute Type="Attribute" Ref="Att_CAR"/>
+       <Inputs>
+        <Node Type="ModelTreeNode">
+         <Status>AggDefDet</Status>
+         <Attribute Type="Attribute" Ref="Att_PRICE"/>
+         <Inputs>
+          <Node Type="ModelTreeNode">
+           <Status>TermDef</Status>
+           <Attribute Type="Attribute" Ref="Att_BUY_PRICE"/>
+          </Node>
+          <Node Type="ModelTreeNode">
+           <Status>TermDef</Status>
+           <Attribute Type="Attribute" Ref="Att_MAINT_PRICE"/>
+          </Node>
+         </Inputs>
+        </Node>
+        <Node Type="ModelTreeNode">
+         <Status>AggDefDet</Status>
+         <Attribute Type="Attribute" Ref="Att_TECH_CHAR_"/>
+         <Inputs>
+          <Node Type="ModelTreeNode">
+           <Status>AggDefDet</Status>
+           <Attribute Type="Attribute" Ref="Att_COMFORT"/>
+           <Inputs>
+            <Node Type="ModelTreeNode">
+             <Status>TermDef</Status>
+             <Attribute Type="Attribute" Ref="Att__PERS"/>
+            </Node>
+            <Node Type="ModelTreeNode">
+             <Status>TermDef</Status>
+             <Attribute Type="Attribute" Ref="Att__DOORS"/>
+            </Node>
+            <Node Type="ModelTreeNode">
+             <Status>TermDef</Status>
+             <Attribute Type="Attribute" Ref="Att_LUGGAGE"/>
+            </Node>
+           </Inputs>
+          </Node>
+          <Node Type="ModelTreeNode">
+           <Status>TermDef</Status>
+           <Attribute Type="Attribute" Ref="Att_SAFETY"/>
+          </Node>
+         </Inputs>
+        </Node>
+       </Inputs>
+      </Node>
+     </Inputs>
+    </Root>
+    <Current Type="ModelTreeNode" Ref="Node_CAR"/>
+   </View>
+   <View Type="ModelTreeView">
+    <Model Type="Model" Ref="Mod_CarCrazyFunctions_dxi"/>
+    <Root Type="ModelTreeNode">
+     <Status>AggUndef</Status>
+     <Attribute Type="Attribute" Ref="Att_Root_1"/>
+     <Inputs>
+      <Node Type="ModelTreeNode" ID="Node_CAR_1">
+       <Status>AggDefDet</Status>
+       <Attribute Type="Attribute" Ref="Att_CAR_1"/>
+       <Inputs>
+        <Node Type="ModelTreeNode">
+         <Status>AggDefUndet</Status>
+         <Attribute Type="Attribute" Ref="Att_PRICE_1"/>
+         <Inputs>
+          <Node Type="ModelTreeNode">
+           <Status>TermDef</Status>
+           <Attribute Type="Attribute" Ref="Att_BUY_PRICE_1"/>
+          </Node>
+          <Node Type="ModelTreeNode">
+           <Status>TermDef</Status>
+           <Attribute Type="Attribute" Ref="Att_MAINT_PRICE_1"/>
+          </Node>
+          <Node Type="ModelTreeNode">
+           <Status>TermDef</Status>
+           <Attribute Type="Attribute" Ref="Att_New"/>
+          </Node>
+         </Inputs>
+        </Node>
+        <Node Type="ModelTreeNode">
+         <Status>AggDefNull</Status>
+         <Attribute Type="Attribute" Ref="Att_TECH_CHAR__1"/>
+         <Inputs>
+          <Node Type="ModelTreeNode">
+           <Status>AggDefNull</Status>
+           <Attribute Type="Attribute" Ref="Att_COMFORT_1"/>
+           <Inputs>
+            <Node Type="ModelTreeNode">
+             <Status>TermDef</Status>
+             <Attribute Type="Attribute" Ref="Att__PERS_1"/>
+            </Node>
+            <Node Type="ModelTreeNode">
+             <Status>TermDef</Status>
+             <Attribute Type="Attribute" Ref="Att__DOORS_1"/>
+            </Node>
+            <Node Type="ModelTreeNode">
+             <Status>TermDef</Status>
+             <Attribute Type="Attribute" Ref="Att_LUGGAGE_1"/>
+            </Node>
+            <Node Type="ModelTreeNode">
+             <Status>TermUndef</Status>
+             <Attribute Type="Attribute" Ref="Att_New_1"/>
+            </Node>
+           </Inputs>
+          </Node>
+          <Node Type="ModelTreeNode">
+           <Status>TermDef</Status>
+           <Attribute Type="Attribute" Ref="Att_SAFETY_1"/>
+          </Node>
+          <Node Type="ModelTreeNode">
+           <Link>True</Link>
+           <Status>TermLink</Status>
+           <Attribute Type="Attribute" Ref="Att_New"/>
+          </Node>
+         </Inputs>
+        </Node>
+       </Inputs>
+      </Node>
+     </Inputs>
+    </Root>
+    <Current Type="ModelTreeNode" Ref="Node_CAR_1"/>
+   </View>
+  </Views>
+ </Project>
+</DEX>

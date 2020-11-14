@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEXi>
+  <VERSION>5.04</VERSION>
+  <CREATED>2020-06-19T14:13:12</CREATED>
+  <SETTINGS/>
+  <ATTRIBUTE>
+    <NAME>A</NAME>
+    <ATTRIBUTE>
+      <NAME>A1</NAME>
+      <ATTRIBUTE>
+        <NAME>A1.2</NAME>
+      </ATTRIBUTE>
+    </ATTRIBUTE>
+  </ATTRIBUTE>
+</DEXi>

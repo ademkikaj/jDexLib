@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEX>
+ <Project Type="Project">
+  <Name>NewProject</Name>
+  <Created Type="VersionInfo">
+   <DateTime>2020-03-23T22:59:54</DateTime>
+   <Library>DEX Library 0.0 DNPT Java</Library>
+  </Created>
+  <Modified Type="VersionInfo">
+   <DateTime>2020-03-23T22:59:54</DateTime>
+   <Library>DEX Library 0.0 DNPT Java</Library>
+  </Modified>
+  <Models>
+   <Model Type="Model">
+    <Name>NewProject</Name>
+    <Root Type="Attribute">
+     <Name>Root</Name>
+     <Inputs>
+      <Attribute Type="Attribute">
+       <Name>NewProject</Name>
+      </Attribute>
+     </Inputs>
+    </Root>
+    <Data Type="Alternatives">
+     <Name>Alternatives</Name>
+     <Header Type="DataHeader"/>
+    </Data>
+   </Model>
+   <Model Type="Model">
+    <Name>Car</Name>
+    <Root Type="Attribute">
+     <Name>Root</Name>
+    </Root>
+    <Data Type="Alternatives">
+     <Name>Alternatives</Name>
+     <Header Type="DataHeader"/>
+    </Data>
+   </Model>
+  </Models>
+ </Project>
+</DEX>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEX>
+ <Project Type="Project">
+  <Name>Project1</Name>
+  <Created Type="VersionInfo">
+   <DateTime>2020-04-05T04:00:01</DateTime>
+   <Library>DEX Library 0.0 DNPT Java</Library>
+  </Created>
+  <Modified Type="VersionInfo">
+   <DateTime>2020-04-05T04:00:01</DateTime>
+   <Library>DEX Library 0.0 DNPT Java</Library>
+  </Modified>
+  <Models>
+   <Model Type="Model" ID="Mod_Project1">
+    <Name>Project1</Name>
+    <Root Type="Attribute" ID="Att_Root">
+     <Name>Root</Name>
+     <Inputs>
+      <Attribute Type="Attribute" ID="Att_Project1">
+       <Name>Project1</Name>
+      </Attribute>
+     </Inputs>
+    </Root>
+    <Data Type="Alternatives">
+     <Name>Alternatives</Name>
+     <Header Type="DataHeader"/>
+    </Data>
+   </Model>
+  </Models>
+  <Views>
+   <View Type="ModelTreeView">
+    <Model Type="Model" Ref="Mod_Project1"/>
+    <Root Type="ModelTreeNode">
+     <Attribute Type="Attribute" Ref="Att_Root"/>
+     <Inputs>
+      <Node Type="ModelTreeNode">
+       <Attribute Type="Attribute" Ref="Att_Project1"/>
+      </Node>
+     </Inputs>
+    </Root>
+   </View>
+  </Views>
+ </Project>
+</DEX>
